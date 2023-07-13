@@ -1,0 +1,22 @@
+{%extends 'main/layout.html'%}
+{%block title%}Оценка гаджета{%endblock%}
+{%block card_header%}Оценка гаджета{%endblock%}
+{%block card_text%}У вас есть старый или разбитый смартфон, который вы хотите продать. Мы его можем выкупить за считанные минуты.Оставь заявку с вашем номером телефона, состояния от 1 до 3(1-состояние идиальное, 2 есть сколы и потёртости, 3 гаджет не включается), наименования модели.{%endblock%}
+{%block info%}
+
+<form method="POST" action="{% url 'submit_form' %}">
+  {% csrf_token %}
+  <div class="mb-3 form-check">
+    <input class="form-control form-control-lg" type="text" name="phone_number" placeholder="Номер телефона" aria-label=".form-control-lg example">
+  </div>
+  <div class="mb-3 form-check">
+    <input class="form-control form-control-lg" type="text" name="state" placeholder="Состояния от 1 до 3" aria-label=".form-control-lg example">
+  </div>
+  <div class="mb-3 form-check">
+    <input class="form-control form-control-lg" type="text" name="model_name" placeholder="Наименования модели" aria-label=".form-control-lg example">
+  </div>
+  <button type="submit" class="btn btn-primary">Оставить заявку</button>
+</form>
+
+
+{%endblock%}
